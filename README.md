@@ -1,5 +1,20 @@
 # Magnetosphere
 
+_Magnetosphere_ provides a vagrant provisioning approach to creating an [Atmosphere](http://www.cyverse.org/atmosphere) development environment.
+
+# Table of Contents
+
+- [Magnetosphere](#magnetosphere)
+- [(Assuming) Mac](#assuming-mac)
+  - [using `vagrant`](#using-vagrant)
+  - [Get Magnetosphere](#get-magnetosphere)
+  - [Inside MAGNETOSPHERE_HOME](#inside-magnetosphere_home)
+  - [Get Clank](#get-clank)
+- [Inside Your Vagrant Box](#inside-your-vagrant-box)
+  - [Run `kickstart.sh`](#run-kickstartsh)
+  - [After ...](#after-)
+
+
 # (Assuming) Mac
 
 - install [brew](http://brew.sh/) (if not already installed)
@@ -50,7 +65,11 @@ $ vagrant box add ubuntu/trusty64
 git clone https://github.com/lenards/magnetosphere
 ```
 
-## Inside MAGNETOSPHERE_HOME
+## Inside `MAGNETOSPHERE_HOME`
+
+We will _stage_ the missing *"bits"* that are necessary for installation in the folder where our `Vagrantfile` is. I will refer to this as `MAGNETOSPHERE_HOME` when walking through the steps for getting the vagrant VM working. 
+
+For the most part, the missing *"bits"* are all available for the Atmosphere team in the _secrets_ repo. But clank discusses [these files](https://github.com/iPlantCollaborativeOpenSource/clank#list-of-files-needed-before-hand) as well.
 
 
 **NOTE:** you may want to change `MOCK_USERNAME` in `variables.yml@vagrant`
