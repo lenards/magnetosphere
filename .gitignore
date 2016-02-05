@@ -1,0 +1,18 @@
+# virtual machine metadata
+.vagrant
+
+# ignore any initialization files (aka secrets or sensitive infoz)
+clank_init
+clank
+*-extras/*
+secrets*
+
+# ignore data dumps in SQL format
+*.sql
+
+# virtualenvs
+ratchet_env
+clank_env
+
+# editors, pffft
+*~
