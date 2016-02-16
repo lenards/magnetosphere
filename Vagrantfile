@@ -4,6 +4,11 @@ $script = <<SCRIPT
 
 sudo service apache2 stop 
 
+# appears to be needed to avoid '404 Not Found' errors on
+# some packages like `gcc/libstdc++-4.8-dev_4.8.4`
+#
+sudo apt-get update
+
 sudo apt-get install libyaml-dev
 sudo apt-get install -y git-core
 
