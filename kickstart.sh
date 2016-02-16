@@ -1,7 +1,7 @@
 WORKSPACE="/vagrant"
 GIT_BRANCH="master"
 SERVER_NAME="localhost"
-ENV_FILE="$WORKSPACE/atmo-extras/clank_init/build_env/variables.yml@local"
+ENV_FILE="$WORKSPACE/atmo-extras/clank_init/build_env/variables.yml@vagrant"
 
 # Before running, ensure that `/vagrant` is present
 # - if there isn't a `/vagrant` - someone might be 
