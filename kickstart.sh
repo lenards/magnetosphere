@@ -3,6 +3,18 @@ GIT_BRANCH="master"
 SERVER_NAME="localhost"
 ENV_FILE="$WORKSPACE/atmo-extras/clank_init/build_env/variables.yml@vagrant"
 
+
+
+
+# screw it - I'm writing functions...
+create_if_does_not_exist() {
+    if [ ! -d "$1" ]; then
+        echo "making directory & chown-ing... ";
+        sudo mkdir -p "$1";
+        sudo chown vagrant:vagrant -R "$1";
+    fi
+}
+
 # Before running, ensure that `/vagrant` is present
 # - if there isn't a `/vagrant` - someone might be 
 #   trying to run this from the host of the vm - 
@@ -11,11 +23,8 @@ ENV_FILE="$WORKSPACE/atmo-extras/clank_init/build_env/variables.yml@vagrant"
 #0. Begin, eh
 cd "$WORKSPACE"
 
-
-#sudo mkdir -p /opt/dev/atmosphere
-#sudo chown vagrant:vagrant -R /opt/dev/atmosphere
-#sudo mkdir -p /opt/env/atmo
-#sudo chown vagrant:vagrant -R /opt/env/atmo
+create_if_does_not_exist "/opt/dev/atmosphere"
+create_if_does_not_exist "/opt/env/atmo"
 
 
 #1. Clone repos - pre-flight handles this
