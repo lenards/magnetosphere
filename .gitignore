@@ -11,6 +11,7 @@ secrets*
 *.sql
 
 # virtualenvs
+env
 ratchet_env
 clank_env
 
