@@ -198,10 +198,41 @@ $ ./kickstart.sh
 ... «such output; much fact; lvl=ansible»
 $ service atmosphere status
 ...
+$ service nginx restart
 $ service atmosphere start
 ```
 
 [![asciicast](https://asciinema.org/a/6kpdcv8mwabfmqpv2o22dnaup.png)](https://asciinema.org/a/6kpdcv8mwabfmqpv2o22dnaup)
+
+## Getting the Databases Loaded... 
+
+_*NOTE*: this step is something that should be (very soon) done by Clank_ 
+
+You will need to know what the database names are in use. Lucky for us, the information was present in the _BUILD_ENV_ file. 
+
+So we can grep for `DBNAME` and find the names of the databases that Clank created during the _kickstart_:
+
+```
+root@vagrant-ubuntu-trusty-64:/vagrant# grep DBNAME $BUILD_ENV_PATH/variables.yml@vagrant 
+ATMO_DBNAME: aeolian
+TROPO_DBNAME: thermograph
+```
+
+Next, we want to get the database user, `DBUSER`: 
+
+```
+root@vagrant-ubuntu-trusty-64:/vagrant# grep DBUSER $BUILD_ENV_PATH/variables.yml@vagrant 
+ATMO_DBUSER: Uncertainty
+TROPO_DBUSER: Uncertainty
+```
+
+```
+root@vagrant-ubuntu-trusty-64:/vagrant# grep DBPASS $BUILD_ENV_PATH/variables.yml@vagrant 
+ATMO_DBPASSWORD: Tercentesimal-th3rm0m3tric-SCALE
+TROPO_DBPASSWORD: Tercentesimal-th3rm0m3tric-SCALE
+```
+
+... some `psql` fu HERE ... 
 
 ## After ... 
 
