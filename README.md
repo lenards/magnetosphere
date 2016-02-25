@@ -182,7 +182,7 @@ $ service atmosphere status
 $ service atmosphere start
 ```
 
-[![asciicast](https://asciinema.org/a/6kpdcv8mwabfmqpv2o22dnaup.png =472x397)](https://asciinema.org/a/6kpdcv8mwabfmqpv2o22dnaup)
+[![asciicast](https://asciinema.org/a/6kpdcv8mwabfmqpv2o22dnaup.png)](https://asciinema.org/a/6kpdcv8mwabfmqpv2o22dnaup)
 
 ## After ... 
 
