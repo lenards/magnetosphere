@@ -166,7 +166,7 @@ This is going to run the combination of `ratchet.py` &  playbooks in [clank](htt
 
 We're going to use a slight abstraction to run _ratchet & clank_ that mimics how all build & deploys happen (we do this via Jenkins as a shell-script build step, but we're calling that _step_ `kickstart.sh`).
 
-_<<<not complete>>>_ 
+_{{not complete}}_ 
 ```
 $ vagrant ssh 
 ... 
