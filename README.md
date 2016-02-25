@@ -72,8 +72,20 @@ git clone https://github.com/lenards/magnetosphere.git
 
 We will _stage_ the missing *"bits"* that are necessary for installation in the folder where our `Vagrantfile` is. I will refer to this as `MAGNETOSPHERE_HOME` when walking through the steps for getting the vagrant VM working. 
 
-For the most part, the missing *"bits"* are all available for the Atmosphere team in the _secrets_ repo. But clank discusses [these files](https://github.com/iPlantCollaborativeOpenSource/clank#list-of-files-needed-before-hand) as well.
+For the most part, the missing *"bits"* are all available for the Atmosphere team in the _secrets_ repo. But Clank discusses [these files](https://github.com/iPlantCollaborativeOpenSource/clank#list-of-files-needed-before-hand) as well.
 
+Our goal is for `MAGNETOSPHERE_HOME` to looking like this:
+```
+$ tree -L 1 . 
+.
+├── LICENSE
+├── README.md
+├── Vagrantfile
+├── {{secrets-repo}}
+├── clank
+├── pre-flight-c
+└── kickstart.sh
+```
 
 **NOTE:** you may want to change `MOCK_USERNAME` in `variables.yml@vagrant`
 
@@ -162,6 +174,7 @@ This is going to run the combination of `ratchet.py` &  playbooks in [clank](htt
 
 We're going to use a slight abstraction to run _ratchet & clank_ that mimics how all build & deploys happen (we do this via Jenkins as a shell-script build step, but we're calling that _step_ `kickstart.sh`).
 
+_<<<not complete>>>_ 
 ```
 $ vagrant ssh 
 ... 
@@ -170,7 +183,7 @@ $ cd /vagrant
 $ ./pre-flight-check.sh
 ...
 $ ./kickstart.sh
-
+```
 
 ## After ... 
 
