@@ -30,14 +30,6 @@ brew install brew-cask
 brew cask install virtualbox
 ```
 
-- install Mac specifics for hosting Virtualbox
-
-Note: _if you have a Virtualbox VMs running, they **must** be suspended/halted..._
-```
-brew cask install virtualbox-extension-pack
-```
-
-
 - install vagrant
 
 ```
@@ -190,3 +182,13 @@ $ ./kickstart.sh
 - review "docs" (that doesn't exist) about secrets ... 
 
 
+## Notes 
+
+You might want install Mac specifics for hosting Virtualbox
+
+**Note:** _if you have a Virtualbox VMs running, they **must** be suspended/halted..._
+
+It appears that the current `virtualbox` cask is including the extension pack. But if for some reason you need to install it, there is a _brew cask_:
+```
+brew cask install virtualbox-extension-pack
+```
