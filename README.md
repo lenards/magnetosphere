@@ -175,7 +175,14 @@ $ cd /vagrant
 $ ./pre-flight-check.sh
 ...
 $ ./kickstart.sh
+...
+... «such output; much fact; lvl=ansible»
+$ service atmosphere status
+...
+$ service atmosphere start
 ```
+
+[![asciicast](https://asciinema.org/a/6kpdcv8mwabfmqpv2o22dnaup.png)](https://asciinema.org/a/6kpdcv8mwabfmqpv2o22dnaup)
 
 ## After ... 
 
