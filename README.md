@@ -3,17 +3,19 @@
 _Magnetosphere_ provides a vagrant provisioning approach to creating an [Atmosphere](http://www.cyverse.org/atmosphere) development environment.
 
 # Table of Contents
-
 - [Magnetosphere](#magnetosphere)
+- [Table of Contents](#table-of-contents)
 - [(Assuming) Mac](#assuming-mac)
   - [using `vagrant`](#using-vagrant)
   - [Get Magnetosphere](#get-magnetosphere)
-  - [Inside MAGNETOSPHERE_HOME](#inside-magnetosphere_home)
+  - [Inside `MAGNETOSPHERE_HOME`](#inside-magnetosphere_home)
   - [Get Clank](#get-clank)
 - [Inside Your Vagrant Box](#inside-your-vagrant-box)
+  - [Snapshot - it's quite progressive](#snapshot---its-quite-progressive)
+  - [Step inside ...](#step-inside-)
   - [Run `kickstart.sh`](#run-kickstartsh)
   - [After ...](#after-)
-
+  - [Notes](#notes)
 
 # (Assuming) Mac
 - ensure XCode is install
