@@ -65,7 +65,7 @@ $ vagrant box add ubuntu/trusty64
 ## Get Magnetosphere
 
 ```
-git clone https://github.com/lenards/magnetosphere
+git clone https://github.com/lenards/magnetosphere.git
 ```
 
 ## Inside `MAGNETOSPHERE_HOME`
@@ -80,10 +80,10 @@ For the most part, the missing *"bits"* are all available for the Atmosphere tea
 
 ## Get Clank
 
-(can do this as part of vagrant provision...)
-
 - clone [clank](https://github.com/iPlantCollaborativeOpenSource/clank)
-
+```
+git clone https://github.com/iPlantCollaborativeOpenSource/clank.git
+```
 
 # Inside Your Vagrant Box
 
