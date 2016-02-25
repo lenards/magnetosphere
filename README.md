@@ -151,6 +151,23 @@ You can see a live capture of the `vagrant up` process if you are [_curious_](ht
 
 Once that's done, you've got a running virtual machine to log into. 
 
+
+## Snapshot - it's quite progressive 
+
+Before we log into the box, we should create an initial _snapshot_ that we can _restore_ to later (if needed). 
+
+```
+vagrant snapshot save INITIAL
+```
+
+Beyond creating them, you can _list_ snapshots, _restore_ snaphosts, and _delete_ snapshots.
+
+For more information, see the [Vagrant Documentation](https://www.vagrantup.com/docs/cli/snapshot.html)
+
+
+## Step inside ... 
+
+Let's log into the vagrant box we've created:
 ```
 vagrant ssh
 ```
