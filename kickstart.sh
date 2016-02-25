@@ -1,6 +1,7 @@
 WORKSPACE="/vagrant"
 GIT_BRANCH="master"
 SERVER_NAME="localhost"
+SECRETS="$WORKSPACE/atmo-extras/clank_init/"
 ENV_FILE="$WORKSPACE/atmo-extras/clank_init/build_env/variables.yml@vagrant"
 
 
@@ -24,6 +25,15 @@ cd "$WORKSPACE"
 create_if_does_not_exist "/opt/dev/atmosphere"
 create_if_does_not_exist "/opt/env/atmo"
 
+# 0.5
+#
+# Clank defers to the Makefile of each project
+# - no end-to-end testing has been done for
+#   the self-signed certs
+# - our bundled cert approach is not easily
+#   undone - so adding an "empty" file to
+#   make the `cat` succeed
+cp $SECRETS"empty_bundle.crt" /etc/ssl/certs/
 
 #1. Clone repos - pre-flight handles this
 # ensure `atmo-extras` in place
