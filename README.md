@@ -16,6 +16,9 @@ _Magnetosphere_ provides a vagrant provisioning approach to creating an [Atmosph
 
 
 # (Assuming) Mac
+- ensure XCode is install
+
+- agree to the XCode license: `sudo xcodebuild -license`
 
 - install [brew](http://brew.sh/) (if not already installed)
 
@@ -140,6 +143,8 @@ Bringing machine 'atmo-api' up with 'virtualbox' provider...
 
 ```
 
+You can see a live capture of the `vagrant up` process if you are [_curious_](https://asciinema.org/a/cwwjic9lttp5aewfzuui7c3xg).
+
 Once that's done, you've got a running virtual machine to log into. 
 
 ```
@@ -156,6 +161,16 @@ _(ensure that the `pre-flight-check.sh` passes prior to this step)_
 This is going to run the combination of `ratchet.py` &  playbooks in [clank](https://github.com/iPlantCollaborativeOpenSource/clank). 
 
 We're going to use a slight abstraction to run _ratchet & clank_ that mimics how all build & deploys happen (we do this via Jenkins as a shell-script build step, but we're calling that _step_ `kickstart.sh`).
+
+```
+$ vagrant ssh 
+... 
+$ sudo su - 
+$ cd /vagrant
+$ ./pre-flight-check.sh
+...
+$ ./kickstart.sh
+
 
 ## After ... 
 
