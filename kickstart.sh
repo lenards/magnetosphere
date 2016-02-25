@@ -4,8 +4,6 @@ SERVER_NAME="localhost"
 ENV_FILE="$WORKSPACE/atmo-extras/clank_init/build_env/variables.yml@vagrant"
 
 
-
-
 # screw it - I'm writing functions...
 create_if_does_not_exist() {
     if [ ! -d "$1" ]; then
@@ -16,8 +14,8 @@ create_if_does_not_exist() {
 }
 
 # Before running, ensure that `/vagrant` is present
-# - if there isn't a `/vagrant` - someone might be 
-#   trying to run this from the host of the vm - 
+# - if there isn't a `/vagrant` - someone might be
+#   trying to run this from the host of the vm -
 #   which is just a bag-of-hurt
 
 #0. Begin, eh
