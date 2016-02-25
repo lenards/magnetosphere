@@ -36,7 +36,7 @@ pip install -r clank/ratchet_requirements.txt
 
 #3. Running ratchet
 cd "$WORKSPACE/clank"
-PYTHONUNBUFFERED=1 python ratchet.py --workspace $WORKSPACE --env_file $ENV_FILE --skip "troposphere"
+PYTHONUNBUFFERED=1 python ratchet.py --workspace $WORKSPACE --env_file $ENV_FILE
 
 #4. Chown to vagrant, activate and run!
 cd "$WORKSPACE"
