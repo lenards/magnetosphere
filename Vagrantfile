@@ -20,7 +20,7 @@ sudo pip install -U pip virtualenv
 SCRIPT
 
 Vagrant.configure(2) do |config|
-  config.vm.define "atmo-api" do |vm2|
+  config.vm.define "atmosphere-dev" do |vm2|
     vm2.vm.box = "ubuntu/trusty64"
     vm2.vm.network "private_network", ip: "192.168.72.19"
 # don't believe I need this to get Atmosphere API going...
