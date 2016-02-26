@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 $script = <<SCRIPT
 
-sudo service apache2 stop 
+sudo service apache2 stop
 
 # appears to be needed to avoid '404 Not Found' errors on
 # some packages like `gcc/libstdc++-4.8-dev_4.8.4`
@@ -13,7 +13,7 @@ sudo apt-get install libyaml-dev
 sudo apt-get install -y git-core
 
 sudo apt-get install -y python python-dev python-pip
-python --version 
+python --version
 pip -V
 sudo pip install -U pip virtualenv
 
