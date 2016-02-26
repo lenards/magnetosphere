@@ -154,7 +154,7 @@ You can see a live capture of the `vagrant up` process if you are [_curious_](ht
 Once that's done, you've got a running virtual machine to log into. 
 
 
-## Snapshot - it's quite progressive 
+## Snapshot - it's _quite_ progressive 
 
 Before we log into the box, we should create an initial _snapshot_ that we can _restore_ to later (if needed). 
 
@@ -215,24 +215,29 @@ So we can grep for `DBNAME` and find the names of the databases that Clank creat
 ```
 root@vagrant-ubuntu-trusty-64:/vagrant# grep DBNAME $BUILD_ENV_PATH/variables.yml@vagrant 
 ATMO_DBNAME: aeolian
-TROPO_DBNAME: thermograph
+TROPO_DBNAME: thermogram
 ```
 
-Next, we want to get the database user, `DBUSER`: 
+We need to do the next actions as `postgres` user: 
+```
+$ su - postgres
+$ cd /vagrant
+...
+... `ls` or check on your sql-dump paths since we're being all manual
+...
+$ psql -d aeolian < /vagrant/prod-sql-dump-for-atmosphere-release-date.sql
+... such output ...
+$ psql -d thermogram < /vagrant/prod-sql-dump-for-troposphere-release-date.sql
+... such output ... 
+$ exit 
+$ service postgresql restart 
+$ service atmosphere restart 
+```
 
+You can verify that the API is working as expected by going to the Django REST Framework page for the API (in your _host_, aka your Mac): 
 ```
-root@vagrant-ubuntu-trusty-64:/vagrant# grep DBUSER $BUILD_ENV_PATH/variables.yml@vagrant 
-ATMO_DBUSER: Uncertainty
-TROPO_DBUSER: Uncertainty
+open https://192.168.72.19/api/sizes
 ```
-
-```
-root@vagrant-ubuntu-trusty-64:/vagrant# grep DBPASS $BUILD_ENV_PATH/variables.yml@vagrant 
-ATMO_DBPASSWORD: Tercentesimal-th3rm0m3tric-SCALE
-TROPO_DBPASSWORD: Tercentesimal-th3rm0m3tric-SCALE
-```
-
-... some `psql` fu HERE ... 
 
 ## After ... 
 
