@@ -6,9 +6,13 @@ clank_init
 clank
 *-extras/*
 secrets*
+scratch
 
 # ignore data dumps in SQL format
 *.sql
+
+# development repos
+dev
 
 # virtualenvs
 env
