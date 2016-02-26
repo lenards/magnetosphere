@@ -1,3 +1,4 @@
+#!/bin/bash -x
 WORKSPACE="/vagrant/scratch"
 GIT_BRANCH="master"
 SERVER_NAME="localhost"
@@ -38,15 +39,13 @@ create_if_does_not_exist "/vagrant/env/atmo"
 create_if_does_not_exist "/vagrant/dev/troposphere"
 create_if_does_not_exist "/vagrant/env/troposphere"
 create_if_does_not_exist "/vagrant/dev/atmosphere-ansible"
+create_if_does_not_exist "/opt/dev/"
+create_if_does_not_exist "/opt/env/"
 
 # ensure that canonical pathing existing within vagrant-box
-ln -s /vagrant/dev/atmosphere /opt/dev/atmosphere
-ln -s /vagrant/dev/troposphere /opt/dev/troposphere
-ln -s /vagrant/dev/atmosphere-ansible /opt/dev/atmosphere-ansible
-
-# ensure that canonical `venv` are present within vagrant-box
-ln -s  /vagrant/env/atmo /opt/env/atmo
-ln -s  /vagrant/env/troposphere /opt/env/troposphere
+ln -fs /vagrant/dev/atmosphere /opt/dev/atmosphere
+ln -fs /vagrant/dev/troposphere /opt/dev/troposphere
+ln -fs /vagrant/dev/atmosphere-ansible /opt/dev/atmosphere-ansible
 
 # move all of 0.1 into Clank at some __future___ date
 
@@ -72,3 +71,7 @@ pip install -r clank/ratchet_requirements.txt
 #3. Running ratchet
 cd "$WORKSPACE/clank"
 PYTHONUNBUFFERED=1 python ratchet.py --workspace $WORKSPACE --env_file $ENV_FILE
+# ensure that canonical `venv` are present within vagrant-box
+ln -fs  /vagrant/env/atmo /opt/env/atmo
+ln -fs  /vagrant/env/troposphere /opt/env/troposphere
+
