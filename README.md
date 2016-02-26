@@ -11,9 +11,10 @@ _Magnetosphere_ provides a vagrant provisioning approach to creating an [Atmosph
   - [Inside `MAGNETOSPHERE_HOME`](#inside-magnetosphere_home)
   - [Get Clank](#get-clank)
 - [Inside Your Vagrant Box](#inside-your-vagrant-box)
-  - [Snapshot - it's quite progressive](#snapshot---its-quite-progressive)
+  - [Snapshot - it's _quite_ progressive](#snapshot---its-_quite_-progressive)
   - [Step inside ...](#step-inside-)
   - [Run `kickstart.sh`](#run-kickstartsh)
+  - [Getting the Databases Loaded...](#getting-the-databases-loaded)
   - [After ...](#after-)
   - [Notes](#notes)
 
