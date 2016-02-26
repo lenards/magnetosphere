@@ -82,6 +82,10 @@ $ tree -L 1 .
 └── kickstart.sh
 ```
 
+We need to: 
+- [ ] ensure _{{secrets-repo}}_ in place within `MAGNETOSPHERE_HOME`
+- [ ] Clank is cloned into `MAGNETOSPHERE_HOME`
+
 **NOTE:** you may want to change `MOCK_USERNAME` in `variables.yml@vagrant`
 
 
@@ -91,6 +95,10 @@ $ tree -L 1 .
 ```
 git clone https://github.com/iPlantCollaborativeOpenSource/clank.git
 ```
+
+## Secrets
+
+... you'll have to ask @lenards or @steve-gregory about that (for _now_)
 
 # Inside Your Vagrant Box
 
