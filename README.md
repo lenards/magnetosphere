@@ -212,7 +212,16 @@ For help on any individual command run `vagrant snapshot <command> -h`
 
 ```
 
-Before we log into the box, we should create an initial _snapshot_ that we can _restore_ to later (if needed). 
+Before we log into the box, we should create an initial _snapshot_ that we can _restore_ to later (if needed). The command within the plugin we want is `take`, we need to provide a name for the snapshot and _vm-name_ (this is defined within the `Vagrantfile`):
+
+```
+$ vagrant snapshot take --help 
+Take snapshot
+
+Usage: vagrant snapshot take [vm-name] <SNAPSHOT_NAME>
+```
+
+By default, the `Vagrantfile` file specifies `atmosphere-dev` as the _vm-name_.
 
 ```
 $ vagrant snapshot take atmosphere-dev INIT
