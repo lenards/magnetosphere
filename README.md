@@ -76,10 +76,11 @@ $ tree -L 1 .
 ├── LICENSE
 ├── README.md
 ├── Vagrantfile
-├── {{secrets-repo}}
-├── clank
-├── pre-flight-c
-└── kickstart.sh
+├── pre-flight-check.sh
+├── kickstart.sh
+└── scratch
+    ├── {{secrets-repo}}
+    └── clank
 ```
 
 We need to: 
