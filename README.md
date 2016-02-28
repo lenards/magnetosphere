@@ -187,15 +187,41 @@ Once that's done, you've got a running virtual machine to log into.
 
 ## Snapshot - it's _quite_ progressive 
 
+Since we are using VirtualBox (VBox) as a provider, we'll use a VBox-specific _vagrant plugin_ to handling saving snapshots. 
+
+```
+$ vagrant plugin install vagrant-vbox-snapshot 
+Installing the 'vagrant-vbox-snapshot' plugin. This can take a few minutes...
+Installed the plugin 'vagrant-vbox-snapshot (0.0.10)'!
+```
+
+The commands are slightly different than what you'll see in the Vagrant docs for `vagrant snapshot`:
+
+```
+$ vagrant snapshot help
+Usage: vagrant snapshot <command> [<args>]
+
+Available subcommands:
+     back
+     delete
+     go
+     list
+     take
+
+For help on any individual command run `vagrant snapshot <command> -h`
+
+```
+
 Before we log into the box, we should create an initial _snapshot_ that we can _restore_ to later (if needed). 
 
 ```
-vagrant snapshot save INITIAL
+$ vagrant snapshot take atmosphere-dev INIT
+Taking snapshot INIT
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Snapshot taken. UUID: 2d60fb56-49ab-4a11-ad15-876c0129cdb1
 ```
 
-Beyond creating them, you can _list_ snapshots, _restore_ snaphosts, and _delete_ snapshots.
-
-For more information, see the [Vagrant Documentation](https://www.vagrantup.com/docs/cli/snapshot.html)
+For more information, see the README for [vagrant-vbox-snapshot](https://github.com/dergachev/vagrant-vbox-snapshot) repository.
 
 
 ## Step inside ... 
