@@ -317,7 +317,50 @@ open https://192.168.72.19/api/sizes
 
 ## Notes 
 
-You might want install Mac specifics for hosting Virtualbox
+### VirtualBox-specific `vagrant snapshot` 
+
+If you hit a failure in `./kickstart.sh`, or you are developing extensions to the existing Magnetosphere, you might find these examples useful.
+
+#### List available snapshots
+
+```
+ $ vagrant snapshot list 
+Listing snapshots for 'atmosphere-dev':
+   Name: INIT (UUID: 2d60fb56-49ab-4a11-ad15-876c0129cdb1)
+```
+
+#### Going back to a previous state
+
+_(You will need to include the _vm-name_ to do this)_
+
+```
+$ vagrant snapshot back -h 
+Back to current snapshot
+
+Usage: vagrant snapshot back [vm-name]
+```
+
+If we wanted to move `atmosphere-dev` _back_ to the previous state:
+```
+ $ vagrant snapshot back atmosphere-dev
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Restoring snapshot 28c20f48-58cf-448e-9ab2-6a4083faaee5
+Starting restored VM
+==> atmosphere-dev: Checking if box 'ubuntu/trusty64' is up to date...
+==> atmosphere-dev: A newer version of the box 'ubuntu/trusty64' is available! You currently
+==> atmosphere-dev: have version '20160127.0.0'. The latest is version '20160222.0.0'. Run
+==> atmosphere-dev: `vagrant box update` to update.
+==> atmosphere-dev: Resuming suspended VM...
+==> atmosphere-dev: Booting VM...
+==> atmosphere-dev: Waiting for machine to boot. This may take a few minutes...
+    atmosphere-dev: SSH address: 127.0.0.1:2200
+    atmosphere-dev: SSH username: vagrant
+    atmosphere-dev: SSH auth method: private key
+==> atmosphere-dev: Machine booted and ready!
+```
+
+### VirtualBox Provider Info ... 
+You might want install Mac specifics for hosting VirtualBox
 
 **Note:** _if you have a Virtualbox VMs running, they **must** be suspended/halted..._
 
