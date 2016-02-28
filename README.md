@@ -94,7 +94,11 @@ We need to:
 
 - clone [clank](https://github.com/iPlantCollaborativeOpenSource/clank)
 ```
-git clone https://github.com/iPlantCollaborativeOpenSource/clank.git
+# from MAGNETOSPHERE_HOME, if `scratch` is not present ... `mkdir scratch`
+$ pwd
+... the path to the clone of this repo ... 
+$ cd scratch
+$ git clone https://github.com/iPlantCollaborativeOpenSource/clank.git
 ```
 
 ## Secrets
