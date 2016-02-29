@@ -86,6 +86,7 @@ $ tree -L 1 .
 We need to: 
 - [ ] ensure _{{secrets-repo}}_ in place within `MAGNETOSPHERE_HOME`
 - [ ] Clank is cloned into `MAGNETOSPHERE_HOME`
+- [ ] `/etc/hosts` includes this line: `192.168.72.19   ui.atmo.dev`
 
 **NOTE:** you may want to change `MOCK_USERNAME` in `variables.yml@vagrant`
 
