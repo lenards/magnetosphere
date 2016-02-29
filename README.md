@@ -359,6 +359,15 @@ Starting restored VM
 ==> atmosphere-dev: Machine booted and ready!
 ```
 
+#### Restoring a specific snapshot
+
+We can just go to the _previous_ snapshot with `vagrant snapshot back [vm-name]`. 
+
+But we might want to go back to a state prior to _just_ the previous one and we can do that with the following: 
+```
+vagrant snapshot go [vm-name] <SNAPSHOT_NAME>
+```
+
 ### VirtualBox Provider Info ... 
 You might want install Mac specifics for hosting VirtualBox
 
