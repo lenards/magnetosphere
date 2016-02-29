@@ -82,14 +82,12 @@ pip install -r ./ratchet_requirements.txt
 RATCHET_ARGS="--workspace $WORKSPACE --env_file $ENV_FILE"
 # Skip things:
 # RATCHET_ARGS="$RATCHET_ARGS --skip 'dependencies,atmosphere'"
-# Override branches
+
+#4.0 Override args
 OVERRIDE_ARGS="{\"ATMOSPHERE_BRANCH\": \"$GIT_BRANCH\", \"TROPOSPHERE_BRANCH\": \"$GIT_BRANCH\"}"
 
-#TODO: this wont work... need to bash-fu
-#RATCHET_ARGS="$RATCHET_ARGS --override_args \"$OVERRIDE_ARGS\""
-
-#3. Running ratchet
-PYTHONUNBUFFERED=1 python ratchet.py $RATCHET_ARGS
+#3. Running ratchet with args and override args
+PYTHONUNBUFFERED=1 python ratchet.py $RATCHET_ARGS --override_args "$OVERRIDE_ARGS"
 
 #Cleanup: ensure that canonical `venv` are present within vagrant-box
 ln -nfs  /vagrant/env/atmo /opt/env/atmo
