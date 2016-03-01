@@ -81,7 +81,7 @@ pip install -r ./ratchet_requirements.txt
 #3.0 ratchet args
 RATCHET_ARGS="--workspace $WORKSPACE --env_file $ENV_FILE"
 # Skip things:
-# RATCHET_ARGS="$RATCHET_ARGS --skip 'dependencies,atmosphere'"
+# RATCHET_ARGS="$RATCHET_ARGS --skip 'dependencies,atmosphere,apt-install'"
 
 #4.0 Override args
 OVERRIDE_ARGS="{\"ATMOSPHERE_BRANCH\": \"$GIT_BRANCH\", \"TROPOSPHERE_BRANCH\": \"$GIT_BRANCH\"}"
