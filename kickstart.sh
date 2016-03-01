@@ -44,11 +44,6 @@ create_if_does_not_exist "$VAGRANT/dev/atmosphere-ansible"
 create_if_does_not_exist "/opt/dev/"
 create_if_does_not_exist "/opt/env/"
 
-# ensure that canonical pathing existing within vagrant-box
-ln -nfs $VAGRANT/dev/atmosphere /opt/dev/atmosphere
-ln -nfs $VAGRANT/dev/troposphere /opt/dev/troposphere
-ln -nfs $VAGRANT/dev/atmosphere-ansible /opt/dev/atmosphere-ansible
-
 # move all of 0.1 into Clank at some __future___ date
 
 # 0.5
@@ -88,8 +83,4 @@ OVERRIDE_ARGS="{\"ATMOSPHERE_BRANCH\": \"$GIT_BRANCH\", \"TROPOSPHERE_BRANCH\": 
 
 #3. Running ratchet with args and override args
 PYTHONUNBUFFERED=1 python ratchet.py $RATCHET_ARGS --override_args "$OVERRIDE_ARGS"
-
-#Cleanup: ensure that canonical `venv` are present within vagrant-box
-ln -nfs  /vagrant/env/atmo /opt/env/atmo
-ln -nfs  /vagrant/env/troposphere /opt/env/troposphere
 
