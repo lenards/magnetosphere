@@ -41,8 +41,6 @@ brew cask install vagrant
 
 ## using `vagrant`
 
-- download/add `ubuntu/trusty64` [box](https://atlas.hashicorp.com/ubuntu/boxes/trusty64)
-
 Note: _depending on your connection's bandwidth this could take 2 to 5 minutes..._
 
 ```
@@ -56,6 +54,9 @@ $ vagrant box add ubuntu/trusty64
     ... 2 to 10 minutes elapse ...
 ==> box: Successfully added box 'ubuntu/trusty64' (v20160127.0.0) for 'virtualbox'!
 ```
+
+- You can also download the vagrant `ubuntu/trusty64` [box](https://atlas.hashicorp.com/ubuntu/boxes/trusty64) through the HashiCorp website.
+
 
 ## Get Magnetosphere
 
