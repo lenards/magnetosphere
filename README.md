@@ -93,7 +93,6 @@ We need to:
 
 ## Get Clank
 
-- clone [clank](https://github.com/iPlantCollaborativeOpenSource/clank)
 ```
 # from MAGNETOSPHERE_HOME, if `scratch` is not present ... `mkdir scratch`
 $ pwd
@@ -101,6 +100,8 @@ $ pwd
 $ cd scratch
 $ git clone https://github.com/iPlantCollaborativeOpenSource/clank.git
 ```
+
+You can refer to [Clank](https://github.com/iPlantCollaborativeOpenSource/clank)'s repository for more information. 
 
 ## Secrets
 
