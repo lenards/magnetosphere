@@ -26,8 +26,7 @@ Vagrant.configure(2) do |config|
 # don't believe I need this to get Atmosphere API going...
 #    vm2.vm.network "forwarded_port", guest: 80, host: 9650
     config.vm.synced_folder ".", "/vagrant",
-        owner: "vagrant", group: "www-data",
-        mount_options: ["dmode=777,fmode=777"]
+        owner: "vagrant", group: "www-data"
     vm2.vm.provision "shell", inline: $script, privileged: false
     vm2.vm.provider "virtualbox" do |v2|
       v2.memory = 4096
