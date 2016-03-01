@@ -3,6 +3,7 @@
 $script = <<SCRIPT
 
 sudo service apache2 stop
+sudo usermod -a -G www-data vagrant
 
 # appears to be needed to avoid '404 Not Found' errors on
 # some packages like `gcc/libstdc++-4.8-dev_4.8.4`
